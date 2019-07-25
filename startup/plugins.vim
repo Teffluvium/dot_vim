@@ -114,7 +114,7 @@ nmap gs :call CdRoot()<CR><plug>(GrepperOperator)
 xmap gs :call CdRoot()<CR><plug>(GrepperOperator)
 
 let my_grepper_options = {
-      \ 'tools': ['rg', 'ag'],
+      \ 'tools': ['git', 'grep', 'rg', 'ag'],
       \ 'rg': {
       \   'grepprg': 'rg --vimgrep --no-heading',
       \ },
@@ -322,6 +322,7 @@ let g:startify_enable_unsafe = 1
 " lengthmatters
 call lengthmatters#highlight('ctermbg=239')
 let g:lengthmatters_excluded = ['unite', 'tagbar', 'startify', 'gundo', 'vimshell', 'w3m', 'nerdtree', 'help', 'qf', 'dirvish', 'netrw']
+let g:lengthmatters_highlight_one_column = 1    " Only higlight a single column
 
 " vim-visual-multi
 let g:VM_default_mappings = 0

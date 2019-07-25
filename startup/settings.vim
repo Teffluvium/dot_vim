@@ -29,10 +29,13 @@ set cindent
 " make backspace traverse between lines
 set backspace=indent,eol,start
 
+set linebreak           " Don't wrap words by default.
 " simulate indent level when wrapping lines
 set breakindent
 " shift over when wrapping lines
 set breakindentopt+=shift:2
+" Show a '+' if a line is longer than the screen.
+set showbreak=+
 
 " oh no, mouse
 set mouse=a
@@ -50,10 +53,21 @@ set directory=""
 " runtime path search for Ex
 set ru
 
+" Set length of history and number of undo levels
+set history=500         " Number of lines of command line history.
+set undolevels=500      " Number of undo levels.
+
+" Set textwidth a bit wider (default is 80)
+set textwidth=90        " Don't wrap words by default.
+
 " Fixing tabs
-set tabstop=2
+set tabstop=4
 set expandtab
-set shiftwidth=2
+set shiftwidth=4
+
+" Show matching brackets. 
+set showmatch
+
 " makes indenting a multiple of shiftwidth
 set shiftround
 " make backspace eat a tab worth of spaces
@@ -93,6 +107,10 @@ set wildignore+=*.o,*.d,00*,nohup.out,tags,.hs-tags,*.hi,*.gcno,*.gcda,*.fasl,*.
 " Ignore case sensitivity in filenames
 set wildignorecase
 
+" Suffixes that get lower priority when doing tab completion for filenames.
+" These are files we are not likey to want edit or read.
+set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
+
 " Additional words for the spell checker
 set spellfile=~/.vim/spell/extra-words.add
 
@@ -125,7 +143,7 @@ set magic
 "" ============================================================================
 " Show line numbers
 set number
-set relativenumber
+" set relativenumber
 
 " show the cursor position
 set ruler
@@ -134,7 +152,7 @@ set ruler
 set nowrap
 
 " whitespace characters
-set listchars=tab:>-,trail:-
+set listchars=tab:>-,trail:-,eol:$
 
 " enable display of whitespace
 set list
@@ -146,7 +164,7 @@ set splitbelow
 " Splits (don't) resize on open/close
 set noequalalways
 
-" Incremental search and sighlighting sesults
+" Incremental search and highlighting results
 set incsearch
 set hlsearch
 
