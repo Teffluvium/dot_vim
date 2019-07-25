@@ -1,15 +1,47 @@
-" Load functions
-source ~/.vim/startup/functions/vimscript-helpers.vim
-source ~/.vim/startup/functions/environment.vim
-source ~/.vim/startup/functions/directories.vim
-source ~/.vim/startup/functions/formatting.vim
+" This file has been modified for my own personal use.  I got it from URL
+" posted below.
 
-" Load each specialized settings file
-source ~/.vim/startup/settings.vim
-source ~/.vim/startup/plugins.vim
-source ~/.vim/startup/mappings.vim
+"------------------------------------------------------------------------------
+" File: $HOME/.vimrc
+" Author: Uwe Hermann <uwe@hermann-uwe.de>
+" URL: http://www.hermann-uwe.de/files/vimrc
+" $Id: .vimrc 331 2005-09-07 21:09:32Z uh1763 $
+"------------------------------------------------------------------------------
 
-" Regenerate spell files.
-call MakeSpell()
+version 6.3
 
-call SourceIfExists('~/.vim_local/vimrc_after.vim')
+
+" Source some standard settings
+if filereadable(expand("~/.vimrc.standard"))
+   source ~/.vimrc.standard
+endif
+
+" Source a list of abbreviations
+if filereadable(expand("~/.vimrc.abbreviations"))
+   source ~/.vimrc.abbreviations
+endif
+
+" Source a remapping of the function keys
+if filereadable(expand("~/.vimrc.funcKeys"))
+   source ~/.vimrc.funcKeys
+endif
+
+" Source a list of common typos to auto correct
+if filereadable(expand("~/.vimrc.typos"))
+   source ~/.vimrc.typos
+endif
+
+" Source configuration for different file types
+if filereadable(expand("~/.vimrc.fileType"))
+   source ~/.vimrc.fileType
+endif
+
+
+"------------------------------------------------------------------------------
+" Local settings.
+"------------------------------------------------------------------------------
+
+" Source a local configuration file if available.
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
