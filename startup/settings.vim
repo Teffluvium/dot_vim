@@ -65,7 +65,7 @@ set tabstop=4
 set expandtab
 set shiftwidth=4
 
-" Show matching brackets. 
+" Show matching brackets.
 set showmatch
 
 " makes indenting a multiple of shiftwidth

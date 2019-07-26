@@ -185,7 +185,7 @@ endfunction
 autocmd User YcmQuickFixOpened call s:CustomizeYcmQuickFixWindow()
 
 if !AtWork()
-  let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/cpp/.ycm_extra_conf.py'
+  let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/.ycm_extra_conf.py'
 endif
 
 " vim-expand-region
@@ -245,7 +245,7 @@ hi link EasyMotionShade  Comment
 let g:UltiSnipsExpandTrigger  = "<nop>"
 let g:ulti_expand_or_jump_res = 0
 function! ExpandSnippetOrCarriageReturn()
-  let snippet=UltiSnips#ExpandSnippetOrJump()
+  let snippet = UltiSnips#ExpandSnippetOrJump()
   if g:ulti_expand_or_jump_res > 0
     return snippet
   else
@@ -275,7 +275,7 @@ if !has('nvim')
 endif
 
 " obvious resize
-let g:obvious_resize_default=10
+let g:obvious_resize_default = 10
 
 " undotree
 " grab focus on toggle
@@ -289,9 +289,9 @@ let g:VimuxOrientation = "h"
 let g:VimuxHeight      = "40"
 
 " fswitch
-au BufEnter *.h let b:fswitchdst  = 'cc,cpp'
+au BufEnter *.h let b:fswitchdst          = 'cc,cpp'
 au BufEnter *_test.cc let b:fswitchfnames = '/_test$//'
-au BufEnter *.cc let b:fswitchdst  = 'h'
+au BufEnter *.cc let b:fswitchdst         = 'h'
 
 " signify
 highlight SignifySignAdd    cterm=bold ctermbg=235  ctermfg=119
@@ -321,7 +321,7 @@ let g:startify_enable_unsafe = 1
 
 " lengthmatters
 call lengthmatters#highlight('ctermbg=239')
-let g:lengthmatters_excluded = ['unite', 'tagbar', 'startify', 'gundo', 'vimshell', 'w3m', 'nerdtree', 'help', 'qf', 'dirvish', 'netrw']
+let g:lengthmatters_excluded             = ['unite', 'tagbar', 'startify', 'gundo', 'vimshell', 'w3m', 'nerdtree', 'help', 'qf', 'dirvish', 'netrw']
 let g:lengthmatters_highlight_one_column = 1    " Only higlight a single column
 
 " vim-visual-multi
